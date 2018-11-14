@@ -3,87 +3,89 @@
 <head>
 <meta charset="utf-8">
 <title>Workout Tracker</title>
-<link rel="stylesheet" href ="/style.css">
-<script src="/index.js" charset="utf-8" defer></script>
+<link rel="stylesheet" href ="style.css">
+<script src="index.js" charset="utf-8" defer></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/
+loader.js"></script>
 </head>
 <body>
 <p>One Rep Max Calculator</p>
-<div>
-<label>Deadlift</label>  
-<input type = 'number' placeholder = 'lbs' class = 'one-rep' id = 'deadlift'>
-<input type = 'number' placeholder = 'reps' class = 'one-rep' id = 'deadlift'>
+<div class = "deadlift">
+	<label>Deadlift</label>  
+	<input type = 'number' placeholder = 'lbs' class = 'one-rep' id = 'deadliftWeight'>
+	<input type = 'number' placeholder = 'reps' class = 'one-rep' id = 'deadliftRep'>
 </div>
-<div>
-<label>Bench Press</label>  
-<input type = 'number' placeholder = 'lbs' class = 'one-rep' id = 'bench'>
-<input type = 'number' placeholder = 'reps' class = 'one-rep' id = 'bench'>
+<div class = 'bench'>
+	<label>Bench Press</label>  
+	<input type = 'number' placeholder = 'lbs' class = 'one-rep' id = 'benchWeight'>
+	<input type = 'number' placeholder = 'reps' class = 'one-rep' id = 'benchRep'>
 </div>
-<div>
-<label>Squat</label>  
-<input type = 'number' placeholder = 'lbs' class = 'one-rep' id = 'squat'>
-<input type = 'number' placeholder = 'reps' class = 'one-rep' id = 'squat'>
+<div class = squat>
+	<label>Squat</label>  
+	<input type = 'number' placeholder = 'lbs' class = 'one-rep' id = 'squatWeight'>
+	<input type = 'number' placeholder = 'reps' class = 'one-rep' id = 'squatRep'>
 </div>
 <button id = 'maxbutton'>Calculate</button>
 
 <div>
 
-<p>Percentage Rep Calculator</p>
-<div>
-	<label>% of Max Weight</label>
-	<input type = "number" placeholder = "Percentage">
+	<p>Percentage Rep Calculator</p>
+	<div>
+		<label>% of Max Weight</label>
+		<input type = "number" placeholder = "Percentage">
 	</div>
 	<div>
-<label>Deadlift</label>  
-</div>
-<div>
-<label>Bench Press</label>  
-</div>
-<div>
-<label>Squat</label>  
-</div>
-<button id = 'percentButton'>Calculate</button>
+		<label>Deadlift</label>  
+	</div>
+	<div>
+		<label>Bench Press</label>  
+	</div>
+	<div>
+		<label>Squat</label>  
+	</div>
+	<button id = 'percentButton'>Calculate</button>
 
-<div>
+	<div>
 
-<input type='number' placeholder ='Week' class = 'number-input'
-id = 'week-input'>
-</div>
-<span class="scroll-container">
-	<label>Day</label>
-	<select id = "day-selector">
-	<option>Monday</option>
-	<option>Tuesday</option>
-	<option>Wednesday</option>
-	<option>Thursday</option>
-	<option>Friday</option>
-</select>
-</span>
-<p>Exercise</p>
-<div>
-<input type='text' placeholder = 'Exercise' class = 'text-input' id = 'exer-input'>
-<input type='number' placeholder ='Sets' class = 'number-input'
-id = 'set-input'>
-<input type='number' placeholder ='Reps' class = 'number-input'
-id = 'rep-input'>
-</div>
-<button id = 'exerciseButton'>Add Lift</button>
-<table style = "width:100%">
-	<caption>Workout</caption>
-	<th>Exercise</th>
-	<th>Weight</th>
-	<th>Reps</th>
-</table>
-<div>Progression of One Rep Maxes Graphs</div>
-<canvas id = "benchGraph"></canvas>
-<canvas id = "deadliftGraph"></canvas>
-<canvas id = "squatGraph"></canvas>
+		<input type='number' placeholder ='Week' class = 'number-input'
+		id = 'week-input'>
+	</div>
+	<span class="scroll-container">
+		<label>Day</label>
+		<select id = "day-selector">
+			<option>Monday</option>
+			<option>Tuesday</option>
+			<option>Wednesday</option>
+			<option>Thursday</option>
+			<option>Friday</option>
+		</select>
+	</span>
+	<p>Exercise</p>
+	<div>
+		<input type='text' placeholder = 'Exercise' class = 'text-input' id = 'exer-input'>
+		<input type='number' placeholder ='Sets' class = 'number-input'
+		id = 'set-input'>
+		<input type='number' placeholder ='Reps' class = 'number-input'
+		id = 'rep-input'>
+	</div>
+	<button id = 'exerciseButton'>Add Lift</button>
+	<table style = "width:100%">
+		<caption>Workout</caption>
+		<th>Exercise</th>
+		<th>Weight</th>
+		<th>Reps</th>
+	</table>
+	<div>Progression of One Rep Maxes Graphs</div>
+	<div class = "graph" id = "benchGraph"> </div>
+	<div class = "graph" id = "deadliftGraph"> </div>
+	<div class = "graph" id = "squatGraph"> </div>
 
-<div>
-<label>Calories</label>
-	<input type = 'number' placeholder = 'calories' >
-<button id = 'calorieButton'>Calculate</button>
-</div>
-<canvas id = "caloriesGraph"></canvas>
-</body>
-</html>
+	<div>
+		<label>Calories</label>
+		<input type = 'number' placeholder = 'calories' >
+		<button id = 'calorieButton'>Calculate</button>
+	</div>
+	<div class = "graph" id = "calorieGraph"> </div>
+	</body>
+	</html>
 
