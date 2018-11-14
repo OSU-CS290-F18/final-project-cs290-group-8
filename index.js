@@ -16,6 +16,46 @@ lineGraph.draw(dataTable);
 var button = document.getElementById('maxbutton');
 button.addEventListener('click',maxButtonHandler);
 
+var percentButton = document.getElementById('percentButton');
+percentButton.addEventListener('click',percentButtonHandler);
+
+function percentMaxWeight(input , weight ,parentElement)
+{
+	var percentage;
+
+	percentage = input.value * weight.value /100;
+	console.log("percent max", percentage);
+	addSpan(parentElement,percentage);
+	
+}
+function percentButtonHandler()
+{
+	console.log('percent Handler');
+	var percentInput = document.getElementById("percentInput");
+	var benchPercent = document.getElementById("benchPercent");
+	var squatPercent = document.getElementById("squatPercent");
+	var deadliftPercent = document.getElementById("deadliftPercent");
+	var benchParent = document.querySelector("div.percentBench");
+	var squatParent = document.querySelector("div.percentSquat");
+	var deadliftParent = document.querySelector("div.percentDeadlift");
+	if(
+		   	percentInput.value == "" ||
+		   	benchPercent.value == "" ||
+		   	squatPercent.value == "" ||
+		   	deadliftPercent.value == ""
+	  )
+	{
+		alert("Please Fill In All of the Fields");
+	}	
+	else
+	{
+		percentMaxWeight(percentInput,benchPercent,benchParent);
+		percentMaxWeight(percentInput,squatPercent,squatParent);
+		percentMaxWeight(percentInput,deadliftPercent,deadliftParent);
+	}
+
+}
+
 function maxButtonHandler()
 {
 	var deadliftWeight = document.getElementById('deadliftWeight');
@@ -87,7 +127,7 @@ function addSpan(parentStart , value)
 	if(check == null)
 	{	
 		var label = document.createElement('span');
-		label.textContent = "One Rep Max:   ";
+		label.textContent = "Value is:   ";
 		parentStart.appendChild(label);
 		var element = document.createElement('span');
 		element.textContent = value;
