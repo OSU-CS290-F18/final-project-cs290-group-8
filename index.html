@@ -9,7 +9,7 @@
 loader.js"></script>
 </head>
 <body>
-<p>One Rep Max Calculator</p>
+<p class ="calctitle">One Rep Max Calculator</p>
 <div class = "deadlift">
 	<label>Deadlift</label>  
 	<input type = 'number' placeholder = 'lbs' class = 'one-rep' id = 'deadliftWeight'>
@@ -29,7 +29,7 @@ loader.js"></script>
 
 <div>
 
-	<p>Percentage Rep Calculator</p>
+	<p class ="calctitle">Percentage Rep Calculator</p>
 	<div>
 		<label>% of Max Weight</label>
 		<input type = "number" id = "percentInput" placeholder = "Percentage">
@@ -74,9 +74,11 @@ loader.js"></script>
 	<button id = 'exerciseButton'>Add Lift</button>
 	<table style = "width:100%">
 		<caption>Workout</caption>
-		<th>Exercise</th>
-		<th>Weight</th>
-		<th>Reps</th>
+		    <tr>
+		    <th>Exercise</th>
+		    <th>Weight</th>
+		    <th>Reps</th>
+		    </tr>
 	</table>
 	<div>Progression of One Rep Maxes Graphs</div>
 	<div class = "graph" id = "benchGraph"> </div>
@@ -89,6 +91,6 @@ loader.js"></script>
 		<button id = 'calorieButton'>Calculate</button>
 	</div>
 	<div class = "graph" id = "calorieGraph"> </div>
+</div>
 	</body>
 	</html>
-
