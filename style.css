@@ -1,0 +1,12 @@
+.titlecalc /* corresponds to the titles of the calc for % and max rep */
+{
+  font-family: 'Titillium Web', sans-serif;
+  color: white;
+}
+
+.bgcalc /* a div encapulates the two calculatations */
+{
+    padding: 10px;
+    background: #4e4e56;
+    background-clip: border-box; 
+}
