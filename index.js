@@ -132,9 +132,25 @@ function addSpan(parentStart , value)
 		check.querySelector('span').textContent = value;
 	}
 }
-function addTable(exercise, reps, sets)
+function addTable(exercise, reps, sets,weight)
 {
 	console.log("Add Table");
+	var newExercise = document.createElement('tr');
+	var newReps = document.createElement('tr');
+	var newSets = document.createElement('tr');
+	var newWeight = document.createElement('tr');
+	newExercise.textContent = exercise.value;
+	newReps.textContent = reps.value;
+	newSets.textContent = sets.value;
+	newWeight.textContent=weight.value;
+	var parentExer = document.getElementById("tableExer");
+	var parentWeight = document.getElementById("tableWeight");
+	var parentReps = document.getElementById("tableReps");
+	var parentSets = document.getElementById("tableSets");
+	parentExer.appendChild(newExercise);
+	parentReps.appendChild(newReps);
+	parentWeight.appendChild(newWeight);
+	parentSets.appendChild(newSets);
 }
 function liftButtonHandler()
 {
@@ -142,17 +158,19 @@ function liftButtonHandler()
 	var exercise = document.getElementById('exer-input');
 	var sets = document.getElementById('set-input');
 	var reps = document.getElementById('rep-input');
+	var weight = document.getElementById('weight-input');
 	if(
 			exercise.value == "" ||
 			sets.value == "" ||
-			reps.value == ""
+			reps.value == ""||
+			weight.value == ""
 	  )
 	{
 		alert("Please Fill Out All Fields");
 	}	
 	else
 	{
-		addTable(exercise,sets,reps);
+		addTable(exercise,sets,reps,weight);
 	}
 }
 var button = document.getElementById('maxbutton');
