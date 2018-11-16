@@ -66,6 +66,8 @@ loader.js"></script>
 	<p>Exercise</p>
 	<div>
 		<input type='text' placeholder = 'Exercise' class = 'text-input' id = 'exer-input'>
+		<input type='number' placeholder ='Weight' class = 'number-input'
+		id = "weight-input">
 		<input type='number' placeholder ='Sets' class = 'number-input'
 		id = 'set-input'>
 		<input type='number' placeholder ='Reps' class = 'number-input'
@@ -74,9 +76,10 @@ loader.js"></script>
 	<button id = 'exerciseButton'>Add Lift</button>
 	<table style = "width:100%">
 		<caption>Workout</caption>
-		<th>Exercise</th>
-		<th>Weight</th>
-		<th>Reps</th>
+		<th id ="tableExer">Exercise</th>
+		<th id = "tableWeight">Weight</th>
+		<th id = "tableSets">Sets</th>
+		<th id = "tableReps">Reps</th>
 	</table>
 	<div>Progression of One Rep Maxes Graphs</div>
 	<div class = "graph" id = "benchGraph"> </div>

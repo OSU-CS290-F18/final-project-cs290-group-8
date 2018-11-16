@@ -1,17 +1,33 @@
 google.charts.load('current', {packages:['corechart','line']});
 google.charts.setOnLoadCallback(Graph);
+function createArray()
+{
+	var [] array;
+	var exercise = document.querySelectorAll
+		var reps 
+		var weight
+}
 
 function Graph()
 {
+	var array = createArray();
 	//makes data table you can add args that represent cols and rows
 	var dataTable = new google.visualization.DataTable();
 	dataTable.addColumn('number','date');
 	dataTable.addColumn('number','Bench Press');
 	//manually adding rows to test graph but should use object
 	dataTable.addRows([[1,100],[3,400],[5,600]]);
-	var lineGraph = new google.visualization.LineChart(document.querySelector(".graph"));
+	var lineGraph = new google.visualization.LineChart(document.getElementById("benchGraph"));
+	var options = {
+		hAxis: {
+			title: 'Weight'
+		},
+		vAxis: {
+			title: 'Date'
+		}
+	};
 
-lineGraph.draw(dataTable); 
+lineGraph.draw(dataTable,options); 
 }
 function percentMaxWeight(input , weight ,parentElement)
 {
@@ -143,6 +159,8 @@ function addTable(exercise, reps, sets,weight)
 	newReps.textContent = reps.value;
 	newSets.textContent = sets.value;
 	newWeight.textContent=weight.value;
+	newExercise.setAttribute('id','liftName') ;
+	newWeight.setAttribute('id','weightPounds') ;
 	var parentExer = document.getElementById("tableExer");
 	var parentWeight = document.getElementById("tableWeight");
 	var parentReps = document.getElementById("tableReps");
