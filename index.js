@@ -13,12 +13,6 @@ function Graph()
 
 lineGraph.draw(dataTable); 
 }
-var button = document.getElementById('maxbutton');
-button.addEventListener('click',maxButtonHandler);
-
-var percentButton = document.getElementById('percentButton');
-percentButton.addEventListener('click',percentButtonHandler);
-
 function percentMaxWeight(input , weight ,parentElement)
 {
 	var percentage;
@@ -138,6 +132,38 @@ function addSpan(parentStart , value)
 		check.querySelector('span').textContent = value;
 	}
 }
+function addTable(exercise, reps, sets)
+{
+	console.log("Add Table");
+}
+function liftButtonHandler()
+{
+	console.log("liftButton Handler");
+	var exercise = document.getElementById('exer-input');
+	var sets = document.getElementById('set-input');
+	var reps = document.getElementById('rep-input');
+	if(
+			exercise.value == "" ||
+			sets.value == "" ||
+			reps.value == ""
+	  )
+	{
+		alert("Please Fill Out All Fields");
+	}	
+	else
+	{
+		addTable(exercise,sets,reps);
+	}
+}
+var button = document.getElementById('maxbutton');
+button.addEventListener('click',maxButtonHandler);
+
+var percentButton = document.getElementById('percentButton');
+percentButton.addEventListener('click',percentButtonHandler);
+
+var liftButton = document.getElementById('exerciseButton');
+liftButton.addEventListener('click',liftButtonHandler);
+
 
 
 
