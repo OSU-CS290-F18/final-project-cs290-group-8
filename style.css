@@ -1,12 +1,54 @@
+h1 /* corresponds to the titles of the calc for % and max rep */
+{ 
+  font-family: 'Titillium Web', sans-serif;
+  color: white;
+  display: inline;
+}
+
+.bgtitle /*the black background of the title*/
+{
+   background: #1e1e1e;
+   padding: 10px;
+}
+
+.track /*second part of title that says "tracker"*/
+{
+  font-style:italic;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.work /*first part of title that says "workout"*/
+{
+  color: #da635d;
+}
+
+
+body{ /*adjusted margins on body*/
+  margin: 0;
+  padding: 0;
+}
+
 .titlecalc /* corresponds to the titles of the calc for % and max rep */
 {
   font-family: 'Titillium Web', sans-serif;
-  color: white;
+  color: #da635d;
 }
+
 
 .bgcalc /* a div encapulates the two calculatations */
 {
     padding: 10px;
     background: #4e4e56;
     background-clip: border-box; 
+    float:left;
+    display:inline-block;
+    vertical-align:top;
 }
+
+div /*style the calc text*/
+{
+  font-family: 'Titillium Web', sans-serif;
+  color:white;
+}
+
