@@ -33,17 +33,26 @@ body{ /*adjusted margins on body*/
 {
   font-family: 'Titillium Web', sans-serif;
   color: #da635d;
+  background: #1e1e1e;
+  border-style: solid;
+  border-color: #da635d;
+  width: 185px;
+  text-align: center;
 }
 
+.one-rep /*corresponds to only the inputs of "one-rep" class*/
+{
+  
+}
 
 .bgcalc /* a div encapulates the two calculatations */
 {
     padding: 10px;
     background: #4e4e56;
-    background-clip: border-box; 
     float:left;
     display:inline-block;
     vertical-align:top;
+    height: 500px;
 }
 
 div /*style the calc text*/
@@ -51,4 +60,3 @@ div /*style the calc text*/
   font-family: 'Titillium Web', sans-serif;
   color:white;
 }
-
