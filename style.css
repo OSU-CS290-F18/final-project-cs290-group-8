@@ -1,6 +1,10 @@
+/*
+CS290
+Group Names: Victor Campa,
+*/
 
 h1 /* corresponds to the titles of the calc for % and max rep */
-{ 
+{
   font-family: 'Titillium Web', sans-serif;
 //  color: white;
   display: inline;
@@ -47,7 +51,7 @@ body{ /*adjusted margins on body*/
 
 .one-rep /*corresponds to only the inputs of "one-rep" class*/
 {
-  
+
 }
 
 .bgcalc /* a div encapulates the two calculatations */

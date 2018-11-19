@@ -1,3 +1,8 @@
+/*
+CS290
+Group Names: Victor Campa,
+*/
+
 google.charts.load('current', {packages:['corechart','line']});
 google.charts.setOnLoadCallback(Graph);
 function createArray()
@@ -27,7 +32,7 @@ function Graph()
 		}
 	};
 
-lineGraph.draw(dataTable,options); 
+lineGraph.draw(dataTable,options);
 }
 function percentMaxWeight(input , weight ,parentElement)
 {
@@ -36,7 +41,7 @@ function percentMaxWeight(input , weight ,parentElement)
 	percentage = input.value * weight.value /100;
 	console.log("percent max", percentage);
 	addSpan(parentElement,percentage);
-	
+
 }
 function percentButtonHandler()
 {
@@ -56,7 +61,7 @@ function percentButtonHandler()
 	  )
 	{
 		alert("Please Fill In All of the Fields");
-	}	
+	}
 	else
 	{
 		percentMaxWeight(percentInput,benchPercent,benchParent);
@@ -74,12 +79,12 @@ function maxButtonHandler()
 	var deadliftRep = document.getElementById('deadliftRep');
 	var benchRep = document.getElementById('benchRep');
 	var squatRep = document.getElementById('squatRep');
-	var parentBench = document.querySelector('div.bench'); 
-	var parentDeadlift = document.querySelector('div.deadlift'); 
-	var parentSquat = document.querySelector('div.squat'); 
+	var parentBench = document.querySelector('div.bench');
+	var parentDeadlift = document.querySelector('div.deadlift');
+	var parentSquat = document.querySelector('div.squat');
 	if( deadliftWeight.value == "" || deadliftRep.value == "" ||
 			benchWeight.value == "" || benchRep.value == "" ||
-			squatWeight.value == "" || squatRep.value == "" 
+			squatWeight.value == "" || squatRep.value == ""
 	  )
 	{
 		alert("Need to Fill in All Fields");
@@ -98,33 +103,33 @@ function getMax(weight , reps , parentTransfer)
 	var max;
 	if (Number(reps.value) >= '10')
 	{
-		max = Number(weight.value) * 100.0 / 75.0;  
+		max = Number(weight.value) * 100.0 / 75.0;
 		console.log("max weight",max);
 	}
 	if (Number(reps.value) <= '9' && Number(reps.value) >= '6')
 	{
-		max = Number(weight.value) * 100.0 / 83.0; 
+		max = Number(weight.value) * 100.0 / 83.0;
 		console.log("max weight 83 ",max);
 	}
 	if (Number(reps.value) <= '5' && Number(reps.value) >= '4')
 	{
-		max = Number(weight.value) * 100.0 / 87.0; 
+		max = Number(weight.value) * 100.0 / 87.0;
 		console.log("max weight 87 ",max);
 	}
 
 	if (Number(reps.value) == '3')
 	{
-		max = Number(weight.value) * 100.0 / 90.0; 
+		max = Number(weight.value) * 100.0 / 90.0;
 		console.log("max weight 90 ",max);
 	}
 	if (Number(reps.value) == '2')
 	{
-		max = Number(weight.value) * 100.0 / 95.0; 
+		max = Number(weight.value) * 100.0 / 95.0;
 		console.log("max weight 95 ",max);
 	}
 	if (Number(reps.value) == '1')
 	{
-		max = Number(weight.value); 
+		max = Number(weight.value);
 		console.log("max weight 100 ",max);
 	}
 	addSpan(parentTransfer,max);
@@ -135,7 +140,7 @@ function addSpan(parentStart , value)
 	console.log("adding a span");
 	var check = parentStart.querySelector("span");
 	if(check == null)
-	{	
+	{
 		var label = document.createElement('span');
 		label.textContent = "Value is:   ";
 		parentStart.appendChild(label);
@@ -185,7 +190,7 @@ function liftButtonHandler()
 	  )
 	{
 		alert("Please Fill Out All Fields");
-	}	
+	}
 	else
 	{
 		addTable(exercise,sets,reps,weight);
@@ -199,7 +204,3 @@ percentButton.addEventListener('click',percentButtonHandler);
 
 var liftButton = document.getElementById('exerciseButton');
 liftButton.addEventListener('click',liftButtonHandler);
-
-
-
-
