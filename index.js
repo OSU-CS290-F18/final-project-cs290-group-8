@@ -2,10 +2,10 @@ google.charts.load('current', {packages:['corechart','line']});
 google.charts.setOnLoadCallback(Graph);
 function createArray()
 {
-	var [] array;
-	var exercise = document.querySelectorAll
-		var reps 
-		var weight
+	var array = [100];
+	var exercise = document.querySelectorAll('#liftName');
+	var weight = document.querySelectorAll('#weightPounds');
+	console.log("in creatarray",exercise);
 }
 
 function Graph()
