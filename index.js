@@ -1,7 +1,3 @@
-/*
-CS290
-Group Names: Victor Campa,
-*/
 
 google.charts.load('current', {packages:['corechart','line']});
 google.charts.setOnLoadCallback(Graph);
