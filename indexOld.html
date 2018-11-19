@@ -16,7 +16,7 @@
 <h1 class= "work">Workout</h1><h1 class = "track"> Tracker</h1>
 </div>
 	<div class="bgcalc">
-		<div>
+		<div class= "c">
 			<p class="titlecalc">One Rep Max Calculator</p>
 			<div class="deadlift">
 				<label>Deadlift</label> <input class='one-rep' id='deadliftWeight' placeholder='lbs' type='number'> <input class='one-rep' id='deadliftRep' placeholder='reps' type='number'>
@@ -27,7 +27,6 @@
 			<div class="squat">
 				<label>Squat</label> <input class='one-rep' id='squatWeight' placeholder='lbs' type='number'> <input class='one-rep' id='squatRep' placeholder='reps' type='number'>
 			</div><button id='maxbutton'>Calculate</button>
-		</div>
 		<div>
 			<p class="titlecalc">Percentage Rep Calculator</p>
 			<div>
@@ -60,10 +59,11 @@
 			Friday
 		</option>
 	</select></span>
-	<p>Exercise</p>
+	<p class = "titlecalc">Exercise</p>
 	<div>
 		<input class='text-input' id='exer-input' placeholder='Exercise' type='text'> <input class='number-input' id='set-input' placeholder='Sets' type='number'> <input class='number-input' id='rep-input' placeholder='Reps' type='number'>
 	</div><button id='exerciseButton'>Add Lift</button>
+  </div>
 	<table style="width:100%">
 		<caption>
 			Workout
