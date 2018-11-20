@@ -2,7 +2,7 @@
 h1 /* corresponds to the titles of the calc for % and max rep */
 {
   font-family: 'Titillium Web', sans-serif;
-//  color: white;
+  color: white;
   display: inline;
   position: relative;
   left: 480px;
@@ -67,5 +67,5 @@ body{ /*adjusted margins on body*/
 div /*style the calc text*/
 {
   font-family: 'Titillium Web', sans-serif;
-//  color:white;
+  /*color:white;*/
 }
