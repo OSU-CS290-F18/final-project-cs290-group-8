@@ -4,14 +4,15 @@ h1 /* corresponds to the titles of the calc for % and max rep */
   font-family: 'Titillium Web', sans-serif;
   color: white;
   display: inline;
-  position: relative;
-  left: 640px;
+  /*position: relative;
+  left: 500px;*/
 }
 
 .bgtitle /*the black background of the title*/
 {
    background: #1e1e1e;
    padding: 10px;
+   background-image: url("images/texture.png");
 }
 
 .track /*second part of title that says "tracker"*/
@@ -30,6 +31,7 @@ h1 /* corresponds to the titles of the calc for % and max rep */
 body{ /*adjusted margins on body*/
   margin: 0;
   padding: 0;
+  background-image: url("images/texture2.png");
 }
 
 .titlecalc, caption /* corresponds to the titles of the calc for % and max rep and excersize*/
@@ -48,22 +50,20 @@ body{ /*adjusted margins on body*/
 th
 {
   border: 1px solid black;
-}
-
-.one-rep /*corresponds to only the inputs of "one-rep" class*/
-{
-
+  width: 120px;
+  text-align: center;
 }
 
 .workouts /*workouts section*/
 {
-  padding: 10px;
+  padding: 15px;
   float:left;
   display:inline-block;
   vertical-align:top;
   height: 100%;
-  width: 30%;
+  width: 35%;
   text-align: center;
+  display: flex;
 }
 
 table /*table for the workout*/
@@ -79,19 +79,20 @@ table /*table for the workout*/
   float:right;
   display:inline-block;
   vertical-align:top;
-  height: 100%;
+  height: 873px;
   width: 30%;
   text-align: center;
+  color: white;
 }
 
-.bgcalc /* a div encapulates the two calculatations */
+.bgcalc /* includes both rep calculations and execsize */
 {
     padding: 10px;
     background: #4e4e56;
     float:left;
     display:inline-block;
     vertical-align:top;
-    height: 100%;
+    height: 873px;
     width: 30%;
     text-align: center;
     color:white;
@@ -100,15 +101,10 @@ table /*table for the workout*/
     left: 0;*/
 }
 
-.deadlift
-{
-
-}
-
 div /*style the calc text*/
 {
   font-family: 'Titillium Web', sans-serif;
-  /*color:white;*/
+  text-align: center;
 }
 
 .table
@@ -118,5 +114,10 @@ div /*style the calc text*/
 
 input /*most the forms input widths*/
 {
-  width: 24%;
+  width: 100%;
+  padding: 2px;
+  margin: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 1px solid #4e4e56;
 }
