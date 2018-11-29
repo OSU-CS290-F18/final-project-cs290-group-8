@@ -55,6 +55,35 @@ th
 
 }
 
+.workouts /*workouts section*/
+{
+  padding: 10px;
+  float:left;
+  display:inline-block;
+  vertical-align:top;
+  height: 100%;
+  width: 30%;
+  text-align: center;
+}
+
+table /*table for the workout*/
+{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.graphprog /*graph section*/
+{
+  padding: 10px;
+  background: #4e4e56;
+  float:right;
+  display:inline-block;
+  vertical-align:top;
+  height: 100%;
+  width: 30%;
+  text-align: center;
+}
+
 .bgcalc /* a div encapulates the two calculatations */
 {
     padding: 10px;
@@ -64,26 +93,20 @@ th
     vertical-align:top;
     height: 100%;
     width: 30%;
-    /*text-align: center;*/
+    text-align: center;
     color:white;
     /*position: absolute;
     top: 0;
     left: 0;*/
 }
 
-/*table
+.deadlift
 {
-  display: flex;
-}*/
 
-.benchGraph
-{
-  display: flex;
 }
 
 div /*style the calc text*/
 {
-  display: flex;
   font-family: 'Titillium Web', sans-serif;
   /*color:white;*/
 }
@@ -95,6 +118,5 @@ div /*style the calc text*/
 
 input /*most the forms input widths*/
 {
-  width: 20%;
-  margin: 0px;
+  width: 24%;
 }
