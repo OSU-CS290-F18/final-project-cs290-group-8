@@ -5,7 +5,7 @@ h1 /* corresponds to the titles of the calc for % and max rep */
   color: white;
   display: inline;
   position: relative;
-  left: 480px;
+  left: 640px;
 }
 
 .bgtitle /*the black background of the title*/
@@ -32,17 +32,22 @@ body{ /*adjusted margins on body*/
   padding: 0;
 }
 
-.titlecalc /* corresponds to the titles of the calc for % and max rep and excersize*/
+.titlecalc, caption /* corresponds to the titles of the calc for % and max rep and excersize*/
 {
   font-family: 'Titillium Web', sans-serif;
   color: #da635d;
   background: #1e1e1e;
   border-style: solid;
   border-color: #da635d;
-  width: 45%;
+  width: 205px;
   margin-left: auto;
   margin-right: auto;
   font-weight: bold;
+}
+
+th
+{
+  border: 1px solid black;
 }
 
 .one-rep /*corresponds to only the inputs of "one-rep" class*/
@@ -58,14 +63,38 @@ body{ /*adjusted margins on body*/
     display:inline-block;
     vertical-align:top;
     height: 100%;
-    text-align: center;
+    width: 30%;
+    /*text-align: center;*/
+    color:white;
     /*position: absolute;
     top: 0;
     left: 0;*/
 }
 
+/*table
+{
+  display: flex;
+}*/
+
+.benchGraph
+{
+  display: flex;
+}
+
 div /*style the calc text*/
 {
+  display: flex;
   font-family: 'Titillium Web', sans-serif;
   /*color:white;*/
+}
+
+.table
+{
+  width: 100%;
+}
+
+input /*most the forms input widths*/
+{
+  width: 20%;
+  margin: 0px;
 }
