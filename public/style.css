@@ -28,7 +28,7 @@ h1 /* corresponds to the titles of the calc for % and max rep */
 }
 
 
-body{ /*adjusted margins on body*/
+body{  /*adjusted margins on body and texture includes*/
   margin: 0;
   padding: 0;
   background-image: url("images/texture2.png");
@@ -47,13 +47,6 @@ body{ /*adjusted margins on body*/
   font-weight: bold;
 }
 
-th
-{
-  border: 1px solid black;
-  width: 120px;
-  text-align: center;
-}
-
 .workouts /*workouts section*/
 {
   padding: 15px;
@@ -63,13 +56,25 @@ th
   height: 100%;
   width: 35%;
   text-align: center;
-  display: flex;
+  overflow-y:auto;
+}
+
+table, td, th
+{
+  border: 1px solid black;
+  width: 120px;
 }
 
 table /*table for the workout*/
 {
   margin-left: auto;
   margin-right: auto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+    padding: 10px;
 }
 
 .graphprog /*graph section*/
@@ -79,20 +84,26 @@ table /*table for the workout*/
   float:right;
   display:inline-block;
   vertical-align:top;
-  height: 873px;
+  height: 100%;
   width: 30%;
   text-align: center;
   color: white;
 }
 
-.bgcalc /* includes both rep calculations and execsize */
+html, body
+{
+    height: 94.8%;
+    width: 100%;
+}
+
+.calculations /* includes both rep calculations and execsize */
 {
     padding: 10px;
     background: #4e4e56;
     float:left;
     display:inline-block;
     vertical-align:top;
-    height: 873px;
+    height: 100%;
     width: 30%;
     text-align: center;
     color:white;
@@ -109,7 +120,6 @@ div /*style the calc text*/
 
 .table
 {
-  width: 100%;
 }
 
 input /*most the forms input widths*/
