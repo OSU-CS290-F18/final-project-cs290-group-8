@@ -9,6 +9,13 @@ function createArray()
 	console.log("in creatarray",exercise);
 }
 
+
+/*object added to graph*/
+var thing2 = { vals: [[1, 3],[2, 7],[3, 5],[4, 8]]} //diz is an object
+console.log("thing2", thing2); //printing because idk
+var stringyly = JSON.stringify(thing2.vals); //your making this a string or something and storing it in stringyly
+console.log("thing2 parsed", stringyly); // printing the stringyly stuff
+
 function Graph()
 {
 	var array = createArray();
@@ -17,7 +24,8 @@ function Graph()
 	dataTable.addColumn('number','date');
 	dataTable.addColumn('number','Bench Press');
 	//manually adding rows to test graph but should use object
-	dataTable.addRows([[1,100],[3,400],[5,600]]);
+
+	dataTable.addRows(JSON.parse(stringyly)); //adding to EPIC graph!
 	var lineGraph = new google.visualization.LineChart(document.getElementById("benchGraph"));
 	var options = {
 		hAxis: {
