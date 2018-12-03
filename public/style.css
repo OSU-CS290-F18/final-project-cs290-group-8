@@ -8,6 +8,19 @@ h1 /* corresponds to the titles of the calc for % and max rep */
   left: 500px;*/
 }
 
+h2
+{
+  font-family: 'Titillium Web', sans-serif;
+  color: black;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  line-height: 100px;
+  margin-top: -100px;
+  font-size: 300%;
+}
+
 .bgtitle /*the black background of the title*/
 {
    background: #1e1e1e;
@@ -116,10 +129,6 @@ div /*style the calc text*/
 {
   font-family: 'Titillium Web', sans-serif;
   text-align: center;
-}
-
-.table
-{
 }
 
 input /*most the forms input widths*/
