@@ -4,5 +4,11 @@
     "weightPounds": 9000,
     "amountSets": 20,
     "amountReps": 2
+  },
+  {
+    "liftName": "Box Jumps",
+    "weightPounds": 9000,
+    "amountSets": 10,
+    "amountReps": 2
   }
 ]
