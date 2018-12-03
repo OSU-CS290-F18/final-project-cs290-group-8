@@ -13,7 +13,7 @@ app.use(express.static('public'));
 app.set('port', (process.env.PORT || 3000));
 
 app.get('/', function (req, res) {
-  res.status(200).render('index');
+  res.status(200).render('index', {post: data});
 });
 
 app.get('*', function (req, res) {
