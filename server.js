@@ -2,7 +2,11 @@ var path = require('path');
 var exphbs = require('express-handlebars');
 var express = require('express');
 var app = express();
-//var data = require('./data');
+var data = require('./data');
+
+app.set('views', path.join(__dirname, 'views'));
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
 
@@ -15,7 +19,6 @@ app.get('/', function (req, res) {
 app.get('*', function (req, res) {
    res.status(200).render('404');
 });
-
 
 app.listen(app.get('port'), function(){
   console.log('== server started on port 3000');
