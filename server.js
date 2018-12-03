@@ -1,9 +1,8 @@
 var path = require('path');
+var exphbs = require('express-handlebars');
 var express = require('express');
 var app = express();
 //var data = require('./data');
-
-
 
 app.use(express.static('public'));
 
@@ -14,7 +13,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('*', function (req, res) {
-   res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+   res.status(200).render('404');
 });
 
 
