@@ -167,9 +167,11 @@ function addTable(exercise, reps, sets,weight)
 	newExercise.textContent = exercise.value;
 	newReps.textContent = reps.value;
 	newSets.textContent = sets.value;
-	newWeight.textContent=weight.value;
-	newExercise.setAttribute('id','liftName') ;
-	newWeight.setAttribute('id','weightPounds') ;
+	newWeight.textContent = weight.value;
+	newExercise.setAttribute('id','liftName');
+	newWeight.setAttribute('id','weightPounds');
+	newSets.setAttribute('id','amountSets');
+	newReps.setAttribute('id','amountReps');
 	var parentExer = document.getElementById("tableExer");
 	var parentWeight = document.getElementById("tableWeight");
 	var parentReps = document.getElementById("tableReps");
