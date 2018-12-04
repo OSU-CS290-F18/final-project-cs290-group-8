@@ -4,6 +4,7 @@
   "description": "Final Project",
   "main": "server.js",
   "scripts": {
+	  "prestart":"npm install -save express && npm install -save express-handlebars",
     "start": "node server.js",
     "dev": "nodemon server.js"
   },

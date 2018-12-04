@@ -10,7 +10,7 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
 
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 3444);
 
 app.get('/', function (req, res) {
   res.status(200).render('index', {post: data});
