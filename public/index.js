@@ -166,9 +166,9 @@ function addTable(exercise, reps, sets, weight)
 	var newSets = document.createElement('th');
 	var newWeight = document.createElement('th');
 	var name1 = "Exercise: ";
-	var name2 = "Weight: ";
-	var name3 = "Sets: ";
-	var name4 = "Reps: ";
+	var name2 = "Sets: ";
+	var name3 = "Reps: ";
+	var name4 = "Weight: ";
 	newExercise.textContent = (name1 + exercise.value);
 	newReps.textContent = (name4 + reps.value);
 	newSets.textContent = (name3 + sets.value);
