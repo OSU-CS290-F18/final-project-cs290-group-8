@@ -11,7 +11,7 @@ function createArray()
 
 
 /*object added to graph*/
-var thing2 = { vals: [[1, 3],[2, 7],[3, 5],[4, 8]]} //diz is an object
+var thing2 = { vals: [[1, 3],[2, 7],[3, 5],[4, 8]]}; //diz is an object
 console.log("thing2", thing2); //printing because idk
 var stringyly = JSON.stringify(thing2.vals); //your making this a string or something and storing it in stringyly
 console.log("thing2 parsed", stringyly); // printing the stringyly stuff
@@ -157,30 +157,34 @@ function addSpan(parentStart , value)
 		check.querySelector('span').textContent = value;
 	}
 }
-function addTable(exercise, reps, sets,weight)
+
+function addTable(exercise, reps, sets, weight)
 {
-	console.log("Add Table");
-	var newExercise = document.createElement('tr');
-	var newReps = document.createElement('tr');
-	var newSets = document.createElement('tr');
-	var newWeight = document.createElement('tr');
-	newExercise.textContent = exercise.value;
-	newReps.textContent = reps.value;
-	newSets.textContent = sets.value;
-	newWeight.textContent = weight.value;
+	var tr = document.createElement('tr');
+	var newExercise = document.createElement('th');
+	var newReps = document.createElement('th');
+	var newSets = document.createElement('th');
+	var newWeight = document.createElement('th');
+	var name1 = "Exercise: ";
+	var name2 = "Weight: ";
+	var name3 = "Sets: ";
+	var name4 = "Reps: ";
+	newExercise.textContent = (name1 + exercise.value);
+	newReps.textContent = (name4 + reps.value);
+	newSets.textContent = (name3 + sets.value);
+	newWeight.textContent = (name2 + weight.value);
 	newExercise.setAttribute('id','liftName');
 	newWeight.setAttribute('id','weightPounds');
 	newSets.setAttribute('id','amountSets');
 	newReps.setAttribute('id','amountReps');
-	var parentExer = document.getElementById("tableExer");
-	var parentWeight = document.getElementById("tableWeight");
-	var parentReps = document.getElementById("tableReps");
-	var parentSets = document.getElementById("tableSets");
-	parentExer.appendChild(newExercise);
-	parentReps.appendChild(newReps);
-	parentWeight.appendChild(newWeight);
-	parentSets.appendChild(newSets);
+	var tablememe = document.getElementById("postBody");
+	tablememe.appendChild(tr);
+	tr.appendChild(newExercise);
+	tr.appendChild(newReps);
+	tr.appendChild(newWeight);
+	tr.appendChild(newSets);
 }
+
 function liftButtonHandler()
 {
 	console.log("liftButton Handler");
