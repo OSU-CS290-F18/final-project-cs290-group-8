@@ -160,6 +160,7 @@ function addSpan(parentStart , value)
 
 function addTable(exercise, reps, sets, weight)
 {
+	console.log("in add table e r s w",exercise, reps, sets, weight);
 	var tr = document.createElement('tr');
 	var newExercise = document.createElement('th');
 	var newReps = document.createElement('th');
@@ -187,11 +188,11 @@ function addTable(exercise, reps, sets, weight)
 
 function liftButtonHandler()
 {
-	console.log("liftButton Handler");
 	var exercise = document.getElementById('exer-input');
 	var sets = document.getElementById('set-input');
 	var reps = document.getElementById('rep-input');
 	var weight = document.getElementById('weight-input');
+	console.log("liftButton Handler e s r w", exercise.value,sets.value,reps.value,weight.value);
 	if(
 			exercise.value == "" ||
 			sets.value == "" ||
@@ -203,7 +204,32 @@ function liftButtonHandler()
 	}
 	else
 	{
-		addTable(exercise,sets,reps,weight);
+		var request = new XMLHttpRequest();
+		var reqUrl= window.location.pathname +"/person";
+		request.open('POST',reqUrl);
+		var mail = {
+			"personID":window.location.pathname,
+				"exercise" : exercise.value,
+				"weight": weight.value,
+				"sets" : sets.value,
+				"reps" : reps.value
+		};
+		console.log("mail",mail);
+		var requestBody = JSON.stringify(mail);
+		console.log("req url", reqUrl);
+		request.setRequestHeader('Content-Type','application/json');
+		request.send(requestBody);
+		request.addEventListener('load',function(event)
+				{
+					if (event.target.status !== 200)
+		{
+			alert("Didnt save excerise into Mongo");
+		}
+				});
+		
+	console.log("liftButton Handler e s r w", exercise.value,sets.value,reps.value,weight.value);
+
+		addTable(exercise,weight,reps,sets);
 	}
 }
 var button = document.getElementById('maxbutton');
