@@ -21,6 +21,10 @@ h2
   font-size: 300%;
 }
 
+.graph{
+  margin: 35px;
+}
+
 .bgtitle /*the black background of the title*/
 {
    background: #1e1e1e;
