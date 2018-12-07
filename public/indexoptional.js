@@ -11,6 +11,10 @@ function createArray()
 var i = 0;
 var m = 0;
 var k = 0;
+var arr  = [];
+var arr2  = [];
+var arr3  = [];
+
 
 function Graph(i,m,k,exercise)
 {
@@ -18,12 +22,12 @@ function Graph(i,m,k,exercise)
 	{
 	var graphpos = { vals: [[0,0]] };
 	for (var j = 1; j < i+1; j++) {
-	graphpos.vals.push([j, j]);
+	graphpos.vals.push([j, arr[j-1]]);
 	}
 	var datapoints = JSON.stringify(graphpos.vals);
 	//makes data table you can add args that represent cols and rows
 	var dataTable = new google.visualization.DataTable();
-	dataTable.addColumn('number','Day');
+	dataTable.addColumn('number','Reps');
 	dataTable.addColumn('number','Bench Press');
 	//manually adding rows to test graph but should use object
 
@@ -35,7 +39,7 @@ function Graph(i,m,k,exercise)
 			title: 'Bench Press'
 		},
 		vAxis: {
-			title: 'Day'
+			title: 'Reps'
 		}
 	};
 	lineGraph.draw(dataTable,options);
@@ -43,13 +47,13 @@ function Graph(i,m,k,exercise)
 if(m === undefined || exercise.value === "Deadlift"){
 	var graphpos2 = { vals: [[0,0]] };
 	for (var j = 1; j < m+1; j++) {
-	graphpos2.vals.push([j, j]);
+	graphpos2.vals.push([j, arr2[j-1]]);
 	}
 	var datapoints = JSON.stringify(graphpos2.vals);
 	var array = createArray();
 	//makes data table you can add args that represent cols and rows
 	var dataTable = new google.visualization.DataTable();
-	dataTable.addColumn('number','Day');
+	dataTable.addColumn('number','Reps');
 	dataTable.addColumn('number','Deadlift');
 	//manually adding rows to test graph but should use object
 
@@ -61,7 +65,7 @@ if(m === undefined || exercise.value === "Deadlift"){
 			title: 'Deadlift'
 		},
 		vAxis: {
-			title: 'Day'
+			title: 'Reps'
 		}
 	};
 	lineGraph.draw(dataTable,options);
@@ -69,13 +73,13 @@ if(m === undefined || exercise.value === "Deadlift"){
 if(k === undefined || exercise.value === "Squat"){
 	var graphpos3 = { vals: [[0,0]] };
 	for (var j = 1; j < k+1; j++) {
-	graphpos3.vals.push([j, j]);
+	graphpos3.vals.push([j, arr3[j-1]]);
 	}
 	var datapoints = JSON.stringify(graphpos3.vals);
 	var array = createArray();
 	//makes data table you can add args that represent cols and rows
 	var dataTable = new google.visualization.DataTable();
-	dataTable.addColumn('number','Day');
+	dataTable.addColumn('number','Reps');
 	dataTable.addColumn('number','Squat');
 	//manually adding rows to test graph but should use object
 
@@ -87,7 +91,7 @@ if(k === undefined || exercise.value === "Squat"){
 			title: 'Squat'
 		},
 		vAxis: {
-			title: 'Day'
+			title: 'Reps'
 		}
 	};
 	lineGraph.draw(dataTable,options);
@@ -293,14 +297,17 @@ function liftButtonHandler()
 		if(exercise.value === "Bench Press")
 		{
 			i++;
+			arr.push(parseInt(reps.value));
 		}
 		else if(exercise.value === "Deadlift")
 		{
 			m++;
+			arr2.push(parseInt(reps.value));
 		}
 		else if(exercise.value === "Squat")
 		{
 			k++;
+			arr3.push(parseInt(reps.value));
 		}
 		Graph(i,m,k,exercise);
 	}
