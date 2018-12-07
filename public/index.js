@@ -1,4 +1,3 @@
-
 google.charts.load('current', {packages:['corechart','line']});
 google.charts.setOnLoadCallback(Graph);
 function createArray()
@@ -9,35 +8,99 @@ function createArray()
 	console.log("in creatarray",exercise);
 }
 
+var i = 0;
+var m = 0;
+var k = 0;
+var arr  = [];
+var arr2  = [];
+var arr3  = [];
 
-/*object added to graph*/
-var thing2 = { vals: [[1, 3],[2, 7],[3, 5],[4, 8]]}; //diz is an object
-console.log("thing2", thing2); //printing because idk
-var stringyly = JSON.stringify(thing2.vals); //your making this a string or something and storing it in stringyly
-console.log("thing2 parsed", stringyly); // printing the stringyly stuff
 
-function Graph()
+function Graph(i,m,k,exercise)
 {
-	var array = createArray();
+	if(i === undefined || exercise.value === "Bench Press")
+	{
+	var graphpos = { vals: [[0,0]] };
+	for (var j = 1; j < i+1; j++) {
+	graphpos.vals.push([j, arr[j-1]]);
+	}
+	var datapoints = JSON.stringify(graphpos.vals);
 	//makes data table you can add args that represent cols and rows
 	var dataTable = new google.visualization.DataTable();
-	dataTable.addColumn('number','date');
+	dataTable.addColumn('number','Reps');
 	dataTable.addColumn('number','Bench Press');
 	//manually adding rows to test graph but should use object
 
-	dataTable.addRows(JSON.parse(stringyly)); //adding to EPIC graph!
+	console.log("json parsing to graph",JSON.parse(datapoints));
+	dataTable.addRows(JSON.parse(datapoints));
 	var lineGraph = new google.visualization.LineChart(document.getElementById("benchGraph"));
 	var options = {
 		hAxis: {
-			title: 'Weight'
+			title: 'Bench Press'
 		},
 		vAxis: {
-			title: 'Date'
+			title: 'Reps'
 		}
 	};
-
-lineGraph.draw(dataTable,options);
+	lineGraph.draw(dataTable,options);
 }
+if(m === undefined || exercise.value === "Deadlift"){
+	var graphpos2 = { vals: [[0,0]] };
+	for (var j = 1; j < m+1; j++) {
+	graphpos2.vals.push([j, arr2[j-1]]);
+	}
+	var datapoints = JSON.stringify(graphpos2.vals);
+	var array = createArray();
+	//makes data table you can add args that represent cols and rows
+	var dataTable = new google.visualization.DataTable();
+	dataTable.addColumn('number','Reps');
+	dataTable.addColumn('number','Deadlift');
+	//manually adding rows to test graph but should use object
+
+	console.log("json parsing to graph",JSON.parse(datapoints));
+	dataTable.addRows(JSON.parse(datapoints));
+	var lineGraph = new google.visualization.LineChart(document.getElementById("deadliftGraph"));
+	var options = {
+		hAxis: {
+			title: 'Deadlift'
+		},
+		vAxis: {
+			title: 'Reps'
+		}
+	};
+	lineGraph.draw(dataTable,options);
+}
+if(k === undefined || exercise.value === "Squat"){
+	var graphpos3 = { vals: [[0,0]] };
+	for (var j = 1; j < k+1; j++) {
+	graphpos3.vals.push([j, arr3[j-1]]);
+	}
+	var datapoints = JSON.stringify(graphpos3.vals);
+	var array = createArray();
+	//makes data table you can add args that represent cols and rows
+	var dataTable = new google.visualization.DataTable();
+	dataTable.addColumn('number','Reps');
+	dataTable.addColumn('number','Squat');
+	//manually adding rows to test graph but should use object
+
+	console.log("json parsing to graph",JSON.parse(datapoints));
+	dataTable.addRows(JSON.parse(datapoints));
+	var lineGraph = new google.visualization.LineChart(document.getElementById("squatGraph"));
+	var options = {
+		hAxis: {
+			title: 'Squat'
+		},
+		vAxis: {
+			title: 'Reps'
+		}
+	};
+	lineGraph.draw(dataTable,options);
+}
+
+
+}
+
+
 function percentMaxWeight(input , weight ,parentElement)
 {
 	var percentage;
@@ -226,10 +289,27 @@ function liftButtonHandler()
 			alert("Didnt save excerise into Mongo");
 		}
 				});
-		
+
 	console.log("liftButton Handler e s r w", exercise.value,sets.value,reps.value,weight.value);
 
 		addTable(exercise,weight,reps,sets);
+
+		if(exercise.value === "Bench Press")
+		{
+			i++;
+			arr.push(parseInt(reps.value));
+		}
+		else if(exercise.value === "Deadlift")
+		{
+			m++;
+			arr2.push(parseInt(reps.value));
+		}
+		else if(exercise.value === "Squat")
+		{
+			k++;
+			arr3.push(parseInt(reps.value));
+		}
+		Graph(i,m,k,exercise);
 	}
 }
 var button = document.getElementById('maxbutton');
